@@ -68,3 +68,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.understand {
+  cursor: pointer;
+  position: relative;
+  top:50%;
+  left:25%;
+  z-index: 1000;
+}

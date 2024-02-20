@@ -30,12 +30,12 @@ const Ban = () => {
               If you believe this is in error, please contact us for a review.
               Thank you.
             </p>
-            <button className="understand" onClick={auth.logout}>
-              I understand
-            </button>
           </div>
         </div>
       </div>
+      <button className="understand" onClick={auth.logout}>
+        I understand
+      </button>
     </>
   );
 };
