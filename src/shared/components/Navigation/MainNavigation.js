@@ -67,29 +67,27 @@ const MainNavigation = (props) => {
         <Link to="/">
           <img src="elements/logo.svg" alt="" className="img_header" />
         </Link>
-        <nav>
-          {/* <NavLinks /> */}
-          <Nav />
-        </nav>
-      </MainHeader>
-      {auth.isLoggedIn && (
-        <>
-          <div id="header_right">
-            <button className="button_header_right">
-              {" "}
-              <img src="elements/Polygone 3.svg" alt="" />
-            </button>
+        {/* <NavLinks /> */}
+        <Nav />
+        {auth.isLoggedIn && (
+          <>
+            <div id="header_right">
+              <button className="button_header_right">
+                {" "}
+                <img src="elements/Polygone 2.svg" alt="" />
+              </button>
 
-            <h1 className="name">{auth.userName}</h1>
-            <img
-            // it should now be in auth to track it when change ( the profile photo )
-              src={auth.profileImage || "elements/default_pdp1.png"}
-              alt=""
-              className="a"
-            />
-          </div>
-        </>
-      )}
+              <h1 className="name">{auth.userName}</h1>
+              <img
+                // it should now be in auth to track it when change ( the profile photo )
+                src={auth.profileImage || "elements/default_pdp1.png"}
+                alt=""
+                className="a"
+              />
+            </div>
+          </>
+        )}
+      </MainHeader>
     </React.Fragment>
   );
 };

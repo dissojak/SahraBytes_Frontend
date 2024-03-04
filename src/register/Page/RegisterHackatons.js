@@ -33,6 +33,7 @@ const RegisterHackatons = () => {
   return (
     <>
       <ErrorModal error={error} onClear={clearError} />
+      <div style={{color:"white"}}>aa</div>
       <div className="article_index">
         <div id="sahara">sahara</div>
         <h1 className="title_index">Going Hackatons</h1>
