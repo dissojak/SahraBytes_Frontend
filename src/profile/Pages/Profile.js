@@ -1,12 +1,13 @@
 import React, { useContext, useState } from "react";
-import "./style_profile.css";
-import "./Popup_Profile.css";
+// import "./style_profile.css";
+import './Profile.css';
+import "../Components/Popup_Profile.css";
 
-import ImageUpload from "../shared/components/FormElements/ImageUpload";
-import { AuthContext } from "../shared/context/auth-context";
-import PopupPw from "./PopupPw";
-import PopupUsername from "./PopupUsername";
-import PopupEmail from "./PopupEmail";
+import ImageUpload from "../../shared/components/FormElements/ImageUpload";
+import { AuthContext } from "../../shared/context/auth-context";
+import PopupPw from "../Components/PopupPw";
+import PopupUsername from "../Components/PopupUsername";
+import PopupEmail from "../Components/PopupEmail";
 
 const Profile = () => {
   const auth = useContext(AuthContext);

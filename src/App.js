@@ -19,7 +19,7 @@ import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import { AuthContext } from "./shared/context/auth-context";
 import Signup from "./user/pages/Signup";
 import RegisterHackatons from "./register/Page/RegisterHackatons";
-import Profile from "./profile/Profile";
+import Profile from "./profile/Pages/Profile";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

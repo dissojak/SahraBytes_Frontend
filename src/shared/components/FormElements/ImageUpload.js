@@ -6,7 +6,7 @@ import { AuthContext } from "../../context/auth-context";
 import { useHttp } from "../../hooks/http-hook";
 import ErrorModal from "../UIElements/ErrorModal";
 import LoadingSpinner from "../UIElements/LoadingSpinner";
-import "../../../profile/style_profile.css";
+import "../../../profile/Pages/Profile.css";
 
 const ImageUpload = () => {
   const auth = useContext(AuthContext);

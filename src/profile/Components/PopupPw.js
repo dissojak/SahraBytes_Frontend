@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import "./style_profile.css";
+// import "../Pages/style_profile.css";
+import '../Pages/Profile.css';
 import "./Popup_Profile.css";
-import { useHttp } from "../shared/hooks/http-hook";
-import LoadingSpinner from "../shared/components/UIElements/LoadingSpinner";
-import ErrorModal from "../shared/components/UIElements/ErrorModal";
+import { useHttp } from "../../shared/hooks/http-hook";
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
+import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 
 const Popup_pw = (props) => {
   const [err, setErr] = useState();

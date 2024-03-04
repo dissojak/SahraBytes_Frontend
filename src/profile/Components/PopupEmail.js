@@ -1,34 +1,30 @@
 import React, { useState } from "react";
-import "./style_profile.css";
+// import "../Pages/style_profile.css";
+import '../Pages/Profile.css';
 import "./PopupUsername.css";
-import { useHttp } from "../shared/hooks/http-hook";
-import LoadingSpinner from "../shared/components/UIElements/LoadingSpinner";
-import ErrorModal from "../shared/components/UIElements/ErrorModal";
+import { useHttp } from "../../shared/hooks/http-hook";
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
+import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 
-const PopupUsername = (props) => {
-  const [newUsername, setNewUsername] = useState("");
+const PopupEmail = (props) => {
+  const [newEmail, setNewEmail] = useState("");
   const { isLoading, error, sendRequest, clearError } = useHttp();
 
   const SubmitHandler = async (event) => {
     event.preventDefault();
     try {
       await sendRequest(
-        `http://localhost:8000/api/user/settings/username/${props.userId}`,
+        `http://localhost:8000/api/user/settings/email/${props.userId}`,
         "PATCH",
         JSON.stringify({
-          username: newUsername,
+          email: newEmail,
         }),
         {
           "Content-Type": "application/json",
         }
       );
-      props.changeUsername(newUsername);
-      props.showChangeUsernameHandler();
+      props.showChangeEmailHandler();
     } catch (e) {}
-  };
-
-  const handleInputChange = (event) => {
-    setNewUsername(event.target.value);
   };
 
   return (
@@ -38,26 +34,26 @@ const PopupUsername = (props) => {
       <div className="change">
         <div className="ch1user">
           <div className="first_ch">
-            <h2 className="tit_ch"> change username</h2>{" "}
+            <h2 className="tit_ch"> change E-mail</h2>{" "}
             <img
               src="elements/X.svg"
               alt=""
               className="tit_ch_img"
-              onClick={props.showChangeUsernameHandler}
+              onClick={props.showChangeEmailHandler}
             />
           </div>
 
           <form onSubmit={SubmitHandler} className="form_ch">
             <label htmlFor="" className="la-ch">
-              new username
+              new Email
             </label>
             <br />
             <input
               type="text"
-              placeholder={props.username}
+              placeholder={props.username + "@gmail.com"}
               className="inp_ch"
-              value={newUsername}
-              onChange={handleInputChange}
+              value={newEmail}
+              onChange={(event) => setNewEmail(event.target.value)}
             />
             <br />
             <button
@@ -73,4 +69,4 @@ const PopupUsername = (props) => {
     </>
   );
 };
-export default PopupUsername;
+export default PopupEmail;
