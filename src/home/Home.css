@@ -51,17 +51,7 @@
   left: 46%;
   bottom: 25vh;
   position: absolute;
-}
-.p2 {
-  font-family: "Raleway-regular";
-  font-size: 18px;
-  color: #ffffff;
-  justify-content: center;
-  transform: translateX(-45%);
-  left: 46%;
-  /* right:24.3vw; */
-  bottom: 21.5vh;
-  position: absolute;
+  text-align: center;
 }
 
 .button_home {

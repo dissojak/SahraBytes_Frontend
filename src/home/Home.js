@@ -38,8 +38,7 @@ const Home = () => {
           <p className="p1">
             "Join a Global Community of Innovators. SaharaBytes hosts hackathons
             that ignite creativity,
-          </p>
-          <p className="p2">
+          <br/>
             foster collaboration, and drive real-world solutions. Dive in,
             compete, and shape the future with us."
           </p>
