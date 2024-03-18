@@ -42,6 +42,7 @@ const Popup_pw = (props) => {
           "Content-Type": "application/json",
         }
       );
+      props.onPasswordChangeSuccess();
       props.showChangePwHandler();
     } catch (e) {}
   };

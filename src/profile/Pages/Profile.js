@@ -9,8 +9,11 @@ import PopupPw from "../Components/PopupPw";
 import PopupUsername from "../Components/PopupUsername";
 import PopupEmail from "../Components/PopupEmail";
 
+import { useToasts } from 'react-toast-notifications';
+
 const Profile = () => {
   const auth = useContext(AuthContext);
+  const { addToast } = useToasts();
 
   const [showChangePw,setShowChangePw]=useState(false);
   const [showChangeUsername,setShowChangeUsername]=useState(false);
@@ -28,6 +31,10 @@ const Profile = () => {
 
   const changeUsernameHandler = (username) => {
     auth.updateUsername(username);
+  };
+
+  const handlePasswordChangeSuccess = () => {
+    addToast('Password changed successfully!', { appearance: 'success' }); // Display success toast
   };
 
   return (
@@ -48,7 +55,7 @@ const Profile = () => {
             </div>
             <h2 className="ch">Change Password</h2>
           </button>
-          {showChangePw &&<PopupPw showChangePwHandler={showChangePwHandler} userId={auth.userId}/>}
+          {showChangePw &&<PopupPw showChangePwHandler={showChangePwHandler} onPasswordChangeSuccess={handlePasswordChangeSuccess} userId={auth.userId}/>}
           <button className="btn2" onClick={showChangeUsernameHandler}>
             <div className="l">
               <img src="elements/username_shape.svg" alt="" />

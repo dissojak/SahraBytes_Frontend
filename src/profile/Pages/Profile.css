@@ -139,3 +139,12 @@
   .loader{
     z-index: 10;
   }
+
+  .react-toast-notifications__container {
+      /* Add your CSS styles to position the toast container */
+      color: #000;
+      position: flex;
+      top: 200px;
+      right: 50px;
+      z-index: 1000; /* Adjust z-index as needed */
+    }

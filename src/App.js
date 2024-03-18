@@ -21,6 +21,9 @@ import Signup from "./user/pages/Signup";
 import RegisterHackatons from "./register/Page/RegisterHackatons";
 import Profile from "./profile/Pages/Profile";
 
+import { ToastProvider } from "react-toast-notifications"; // Import ToastProvider
+
+
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setUserId] = useState();
@@ -135,6 +138,7 @@ const App = () => {
   }
 
   return (
+    <ToastProvider>
     <AuthContext.Provider
       value={{
         isLoggedIn: isLoggedIn,
@@ -155,6 +159,7 @@ const App = () => {
         <main style={{ marginTop: 0 }}>{routes}</main>
       </Router>
     </AuthContext.Provider>
+    </ToastProvider>
   );
 };
 
